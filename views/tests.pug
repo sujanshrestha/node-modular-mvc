@@ -1,0 +1,11 @@
+extend layout
+
+block content
+	h1= title
+	p #{desc}
+	p #{message}
+	div.navigation
+		ul.nav.nav-tabs
+			each val in menu
+				li(role='presentation')
+					a(href="/tests/"+val)= val

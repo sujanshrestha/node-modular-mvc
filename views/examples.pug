@@ -1,0 +1,26 @@
+extend layout
+
+block content
+	h1= title
+	p #{desc}
+	p #{message}
+	div.navigation
+		ul.nav.nav-tabs
+			each id in examples
+				li(role='presentation')
+					a.link(data-target=id,href="#")= id
+	div.display#panel1
+					
+	script.
+		$(document).ready(function(){
+
+			var getReq = function() {				
+				$.get("/tests/examples/"+$(this).attr('data-target'), function(data){
+						$("#panel1").html(data.message);
+						}
+					);
+			};
+			
+			$(".link").click(getReq);
+		});			
+
