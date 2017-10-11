@@ -4,7 +4,8 @@
   "description": "simple node app",
   "main": "server.js",
   "scripts": {
-    "start": "NODE_ENV=development node server.js",
+    "start": "NODE_ENV=production node server.js",
+    "dev": "NODE_ENV=development nodemon server.js",
     "test": "mocha --timeout 10000"
   },
   "repository": "https://bitbucket.org/sujnshrestha/node-app.git",
@@ -14,6 +15,8 @@
     "body-parser": "^1.18.2",
     "cookie-parser": "^1.4.3",
     "express": "^4.15.5",
+    "mongodb": "^2.2.31",
+    "monk": "^6.0.5",
     "morgan": "^1.9.0",
     "pug": "^2.0.0-rc.4",
     "really-need": "^1.9.2",
@@ -23,6 +26,7 @@
   "devDependencies": {
     "chai": "^4.1.2",
     "chai-http": "^3.0.0",
-    "mocha": "^4.0.0"
+    "mocha": "^4.0.0",
+    "nodemon": "^1.12.1"
   }
 }

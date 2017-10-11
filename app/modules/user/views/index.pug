@@ -3,3 +3,7 @@ extends ../../../views/layout
 block content
   h1= title
   p Welcome to #{title}
+  ul
+    each val, i in allUsers
+      li(class="list")=val.firstname +' '+ val.lastname +' '+ val.email
+      
