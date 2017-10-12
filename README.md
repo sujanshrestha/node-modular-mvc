@@ -3,5 +3,5 @@ Modular MERN scaffoldings
 
 ## Install and Run
 
-``` Yarn install
-``` Yarn run {dist | test | start | dev | webpack}
+1. Yarn install
+2. Yarn run {dist | test | start | dev | webpack}
