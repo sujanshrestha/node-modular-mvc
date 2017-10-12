@@ -1,0 +1,7 @@
+extends ./layout
+
+block content
+  div#mocha
+  script mocha.setup('bdd')
+  script(src="/js/spec/home_index.js")
+  script mocha.run()

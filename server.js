@@ -1,16 +1,18 @@
-#!/usr/bin/env node
-
 /**
  * Module dependencies.
  */
 
-var app = require('../app');
-var debug = require('debug')('node-app:server');
-var http = require('http');
+var app = require ("./app");
+var debug = require ("debug")('node-app:server');
+var http = require ("http");
 
 /**
  * Get port from environment and store in Express.
  */
+
+// console.log(process.env.NODE_ENV);
+// console.log(app.get('env'));
+// console.log(app.Config);
 
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
@@ -28,6 +30,11 @@ var server = http.createServer(app);
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
+
+
+app.closeServer = function() {
+  server.close();
+}
 
 /**
  * Normalize a port into a number, string, or false.
@@ -87,4 +94,8 @@ function onListening() {
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
+  console.log('Listening on ' + bind);
 }
+
+
+module.exports = server;

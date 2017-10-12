@@ -1,0 +1,10 @@
+extends ../../../views/layout
+
+block content
+  h1= title
+  p #{title}
+  ul
+    li(class="list")=userDetail.firstname
+    li(class="list")=userDetail.lastname 
+    li(class="list")=userDetail.email
+      
