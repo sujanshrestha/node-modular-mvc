@@ -6,7 +6,9 @@
   "scripts": {
     "start": "NODE_ENV=production node server.js",
     "dev": "NODE_ENV=development nodemon server.js",
-    "test": "mocha --timeout 10000"
+    "test": "mocha --timeout 10000",
+    "webpack": "webpack",
+    "dist":"node ./build/server-dist.js"
   },
   "repository": "https://bitbucket.org/sujnshrestha/node-app.git",
   "author": "Sujan Shrestha <sujanshrestha@gmail.com>",
@@ -15,6 +17,8 @@
     "body-parser": "^1.18.2",
     "cookie-parser": "^1.4.3",
     "express": "^4.15.5",
+    "express-validator": "^4.2.1",
+    "global": "^4.3.2",
     "mongodb": "^2.2.31",
     "monk": "^6.0.5",
     "morgan": "^1.9.0",
@@ -27,6 +31,7 @@
     "chai": "^4.1.2",
     "chai-http": "^3.0.0",
     "mocha": "^4.0.0",
-    "nodemon": "^1.12.1"
+    "nodemon": "^1.12.1",
+    "webpack": "^3.7.1"
   }
 }

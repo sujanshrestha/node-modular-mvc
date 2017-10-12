@@ -1,0 +1,13 @@
+extends ../../../views/layout
+
+block content
+  h1= title
+  p #{title}
+  form(action="/user/login",method="post")
+    ul
+      each val, i in error
+        li(class="list")=val.msg
+    div
+      label(for="email")="Email"
+      input(type="text", name="email")
+      input(type="submit", value="log in")

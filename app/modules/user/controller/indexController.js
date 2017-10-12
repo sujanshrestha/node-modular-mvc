@@ -24,3 +24,28 @@ exports.add_user = function(req, res) {
 	Users.add(req.connect);
 	res.redirect('/user');
 }
+
+exports.login_user = function(req, res) {
+
+	//req.check('email', 'Email is required').isEmpty();
+	req.check('email', 'Email is incorrect format').isEmail();
+	
+	let errors = req.validationErrors();
+	let user = {
+		'email' : req.sanitize('email').escape().trim()
+	}
+
+	if(! errors) {
+		Users.getByEmail(req.connect, user, (data) => {
+			if(data)
+				res.render('welcome', { title : 'Welcome ' + data.firstname, userDetail: data });		 
+			else 
+				res.render('login', { title : 'Please Log in', error: [{msg:'no user available'}] });
+
+		});	
+	}
+	else {
+		res.render('login', { title : 'Please Log in', error: errors });
+	}
+	
+}
